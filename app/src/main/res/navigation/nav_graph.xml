@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hotelFragment">
+
+    <fragment
+        android:id="@+id/hotelNumberFragment"
+        android:name="com.example.myapplication.ui.SecondScreen.HotelNumberFragment"
+        android:label="fragment_hotel_number"
+        tools:layout="@layout/fragment_hotel_number" >
+        <action
+            android:id="@+id/action_hotelNumberFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelFragment"
+        android:name="com.example.myapplication.ui.FirstScreen.HotelFragment"
+        android:label="fragment_hotel"
+        tools:layout="@layout/fragment_hotel" >
+        <action
+            android:id="@+id/action_hotelFragment_to_hotelNumberFragment"
+            app:destination="@id/hotelNumberFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.example.myapplication.ui.ThreethScreen.BookingFragment"
+        android:label="BookingFragment" >
+        <action
+            android:id="@+id/action_bookingFragment_to_congratulationScreen"
+            app:destination="@id/congratulationScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/congratulationScreen"
+        android:name="com.example.myapplication.ui.CongratulationScreen.CongratulationScreen"
+        android:label="fragment_congratulation_screen"
+        tools:layout="@layout/fragment_congratulation_screen" >
+        <action
+            android:id="@+id/action_congratulationScreen_to_hotelFragment"
+            app:destination="@id/hotelFragment" />
+    </fragment>
+</navigation>
